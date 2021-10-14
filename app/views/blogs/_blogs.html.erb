@@ -1,0 +1,154 @@
+<style type="text/css">
+.a-link {
+  color: rgb(64, 162, 156)  !important;
+
+}
+
+.img-blog{
+  height:150px;
+  width:100%;
+}
+
+.item{
+ padding: 15px;
+ /*border: 1px solid black;*/
+ margin-top: 10px;
+}
+.item-card{
+  transition:0.5s;
+  cursor:pointer;
+}
+.item-card-title{  
+  /*font-size:30px;*/
+  transition:1s;
+  cursor:pointer;
+  color: black;
+  padding: 10px;
+}
+.item-card-title i{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg); 
+  color:#18d4ca;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  background-color: lightgray;
+}
+.card-text{
+  height:80px;  
+  padding: 10px;
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+.ui-menu-item{
+  background-color: grey;
+  width: 50%;
+  padding: 10px;
+  display: block;
+  color: white;
+  margin-left: -35px;
+}
+ul{
+  list-style-type:none
+}
+.s-search{
+  margin-top: 10px;
+}
+
+</style>
+<!-- <section class="sec_4"> -->
+
+  <!-- services block 2 -->
+  <div class="dss-services-block py-5 margin-top85-bottom10" id="classes">
+
+    <div class="container ">
+
+      <div class="row s-search">
+        <div class="col-md-10">
+          <%= form_tag(blogs_path , :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], class: "search-query form-control", placeholder: "Search From Blog Title", type: "search", data: {autocomplete: autocomplete_blog_title_path} %> 
+        </div>
+        <div class="col-md-2 ">
+          <%= submit_tag "Search" , class: "btn btn-success"%>
+        </div>
+        <%end%>
+      </div>
+      <script type="text/javascript" charset="utf-8">
+        $('#search').bind('railsAutocomplete.select', function(event, data){
+          $('#search-form').submit()
+        });
+      </script>
+
+      <%= link_to 'Add blog', new_blog_path, class: "btn btn-success ml-3" , style:"margin-top: 30px" %>
+      <% status ='publish' %>
+      <% if check_admin %>
+      <%= link_to 'Draft', '/draft', class:"btn btn-dark ml-3", method: :get %>
+      <% end %>
+      <% if @blogs.present? %>
+      <% publish_blog = @blogs.where(status: status) %>
+      <% publish_blog.each_slice(3).each do |blogs| %>
+      <div class="row">
+        <%  blogs.each do |blog| %>
+        <div class="col-md-4 col-sm-4 col-lg-4 item">
+          <div class="card item-card card-block">
+            <%= link_to blog, method: 'get' do %>
+            <img class= "img-blog " src="<%= image_url(blog.image) %>" alt="Photo of sunset" loading="lazy" />
+            <h2 class="item-card-title text-primary mt-3 mb-3"><%= truncate(blog.title, :length => 50) %></h2>
+            <% end %>
+
+            <div class="row" style="padding: 10px;">
+              <div class="col-md-8">
+                <%= link_to 'View', blog, class: 'btn btn-primary', method: 'get' %>
+                <% if check_admin %>
+                <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-success', method: :get %>
+                <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger' %>
+                <% end %>
+              </div>
+              <div class="col-md-4">
+                <p  style="float: right; font-size: 16px;"><i class="fa fa-eye"  aria-hidden="true"></i> <%=blog.unique_impression_count %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>    
+      <% end %>
+      <% end %>
+
+      <div class="d-flex mt-3">
+        <div class="mx-auto">
+          <%= will_paginate @blogs, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shadbox</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+ <!--  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//cdn.ckeditor.com/4.4.7/full-all/ckeditor.js"></script>
+
+    <%= javascript_include_tag Ckeditor.cdn_url
+ %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
+  <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+     <% unless Rails.env.development?%>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPNC41JZN2"></script>
+  <script>
+    $("img").addClass("preview");
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LPNC41JZN2');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6053618602532772"
+     crossorigin="anonymous"></script>
+<% end %> 
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <a href="#" id="scroll" style="display: none;"><span></span></a>
+    <%= yield %>
+    <!--Start of Tawk.to Script-->
+    <% unless Rails.env.development?%>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6118fd09649e0a0a5cd13788/1fd4porsr';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+  <%end%>
+<!--End of Tawk.to Script-->
+    <%= render 'layouts/footer' %>
+    <script type="text/javascript">
+    <%  if notice.present?%>
+    var message = "<%= notice %>";
+    sweetAlert(message);
+    <% end %>
+    <%  if alert.present?%>
+    var message = "<%= alert %>";
+    sweetAlert(message);
+    
+    <% end %>
+  </script>
+  </body>
+</html>

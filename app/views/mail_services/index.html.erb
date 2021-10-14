@@ -1,0 +1,36 @@
+<%= render 'layouts/data_table' %>
+<div class="container margin-top85-bottom10">
+  
+<p id="notice"><%= notice %></p>
+
+<h1>Mail Services</h1>
+<table id="table_id" class="table table-striped table-bordered dt-responsive nowrap">
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>Email</th>
+      <th>Full name</th>
+      <th>Body</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mail_services.each do |mail_service| %>
+      <tr>
+        <td><%= mail_service.title %></td>
+        <td><%= mail_service.email %></td>
+        <td><%= mail_service.full_name %></td>
+        <td><%= raw mail_service.body %></td>
+        <td><%= link_to 'Show', mail_service %>s
+        <%= link_to 'Edit', edit_mail_service_path(mail_service) %>
+        <%= link_to 'Destroy', mail_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mail Service', new_mail_service_path %>
+</div>

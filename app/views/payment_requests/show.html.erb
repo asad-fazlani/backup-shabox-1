@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payment_request.user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payment_request.status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @payment_request.comment %>
+</p>
+
+<%= link_to 'Edit', edit_payment_request_path(@payment_request) %> |
+<%= link_to 'Back', payment_requests_path %>

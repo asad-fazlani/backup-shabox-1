@@ -1,0 +1,13 @@
+development:
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+
+test:
+  adapter: test
+
+production:
+  adapter: redis
+  # url: redis://:pb60dc3c143df996cd46134b2c514034e868ebaeb3e5f249ecfb8eb5851878d20@ec2-44-196-63-216.compute-1.amazonaws.com:29459
+  url:  rediss://:pb60dc3c143df996cd46134b2c514034e868ebaeb3e5f249ecfb8eb5851878d20@ec2-44-196-63-216.compute-1.amazonaws.com:29460
+  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: app_name_production

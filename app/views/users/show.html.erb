@@ -1,0 +1,171 @@
+
+<%= render "layouts/blog_css" %>
+<div class="wrapper margin-top85-bottom10">
+  <div class="profile-card js-profile-card">
+
+    <div class="profile-card__img">
+     <% if @user.profile_picture.present? %>
+     <img src="<%= image_url(@user.profile_picture) %>">
+     <% else %>
+     <img src="/avtar.jpg" alt="profile card">
+     <% end %>
+   </div>
+
+   <div class="profile-card__cnt js-profile-cnt">
+    <div class="profile-card__name"> @<%= @user.username %></div>
+    <div class="profile-card__txt">
+     <% if @user.description.present? %>
+     <%= @user.description %>
+     <% else %>
+     I am <%= @user.username %> blogger on ShadBox. I am influencer,content writer,author and publisher. Feel free to ask me any question and suggestions.
+     <% end %>
+   </div>
+   <div class="profile-card-loc">
+    <span class="profile-card-loc__icon">
+      <svg class="icon"><use xlink:href="#icon-location"></use></svg>
+    </span>
+
+   <!--    <span class="profile-card-loc__txt">
+        Istanbul, Turkey
+      </span> -->
+    </div>
+
+    <div class="profile-card-inf">
+      <div class="profile-card-inf__item">
+       <%= link_to followers_path(id: @user.slug)do %>
+       <div class="profile-card-inf__title"><%=  number_convert(User.where(id: Follow.where(followee_id: @user.id).pluck(:follower_id)).count) %></div>
+       <div class="profile-card-inf__txt" style="color:black;">Followers</div>
+     </div>
+     <% end %>
+     <%= link_to followings_path(id: @user.slug) do %>
+     <div class="profile-card-inf__item">
+      <div class="profile-card-inf__title"><%= number_convert(User.where(id: @user.followed_users.pluck(:followee_id)).count) %></div>
+      <div class="profile-card-inf__txt" style="color:black;">Following</div>
+    </div>
+    <% end %>
+<!-- 
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title">65</div>
+        <div class="profile-card-inf__txt">Following</div>
+      </div> -->
+
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title"><%= number_convert(@user.blogs.publish.count) %></div>
+        <div class="profile-card-inf__txt">Blogs</div>
+      </div>
+
+      <div class="profile-card-inf__item">
+        <div class="profile-card-inf__title"><%= number_convert(Impression.where(impressionable_id: @user&.blogs&.ids,impressionable_type: "Blog").count) %></div>
+        <div class="profile-card-inf__txt">Views</div>
+      </div>
+    </div>
+    <div class="profile-card-inf__item">
+      <div class="profile-card-inf__title">
+        <%= number_convert(Favorite.where(favoritable_id: @user&.blogs&.ids,  favoritable_type: "Blog").count) %>
+      </div>
+      <div class="profile-card-inf__txt">Likes</div>
+    </div>
+  </div>
+
+  <div class="profile-card-social">
+    <a href="<%= @user.faceboook_link %>" class="profile-card-social__item facebook" target="_blank">
+      <span class="icon-font">
+        <i class="fa fa-facebook"></i>
+      </span>
+    </a>
+
+    <a href="<%=  @user.instagram_link %>" class="profile-card-social__item instagram" target="_blank">
+      <span class="icon-font">
+        <i class="fa fa-instagram"></i>
+      </span>
+    </a>
+
+
+    <a href="<%= @user.github_link %>" class="profile-card-social__item github" target="_blank">
+      <span class="icon-font">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+
+    <a href="<%= @user.linkedin_link %>" class="profile-card-social__item behance" target="_blank">
+      <span class="icon-font">
+        <i class="fa fa-linkedin"></i>
+      </span>
+    </a>
+  </div>
+
+
+
+
+  <% if current_user.present? %>
+  <div class="profile-card-ctr" style="padding:10px;">
+    <!-- <button class="profile-card__button button--blue js-message-btn">Message</button> -->
+    <button class="profile-card__button button--orange">
+
+      <% if current_user == @user %>
+      <%= link_to 'Edit Account', edit_user_registration_path, method: :get ,style:"color:white"%>
+      <!-- #{@user.username}" -->
+      <% elsif current_user.followees.include?(@user) %>
+      <%= link_to "UnFollow",     
+      unfollow_user_path, method: "POST" , style: "color:white;"%>
+      <% else %>
+      <%= link_to "Follow", follow_user_path, 
+      method: "POST" , style: "color:white;" %>
+      <% end %>
+    </button>
+
+    <button class="profile-card__button button--orange">
+      <%= link_to 'Earning',earning_path(@user), method: :get ,style:"color:white"%>
+    </button>
+  </div>
+</div>
+<% end %>
+
+<!-- <div class="text-center"> -->
+  <!-- <button class="profile-card__button button--blue js-message-close"> -->
+    <%#= link_to 'Following', followings_path(id: @user.slug), style:"color:white; " %>
+    <!-- </button> -->
+    <!-- <button class="profile-card__button button--blue js-message-close"> -->
+      <%#= link_to 'Followers', followers_path(id: @user.slug), style:"color:white;  " %>
+      <!-- </button> -->
+      <!-- </div> -->
+
+      <div class="profile-card-message js-message">
+        <form class="profile-card-form">
+          <div class="profile-card-form__container">
+            <textarea placeholder="Say something..."></textarea>
+          </div>
+
+          <div class="profile-card-form__bottom">
+            <button class="profile-card__button button--blue js-message-close">
+              Send
+            </button>
+
+            <button class="profile-card__button button--gray js-message-close">
+              Cancel
+            </button>
+          </div>
+        </form>
+
+        <div class="profile-card__overlay js-message-close"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="posts">
+  <%= render :partial => 'blogs/blog_load_more', :locals => { :blogs => @blogs }%>
+</div>
+<%#= link_to 'Load More Posts', user_path(user: @user,page: @blogs.next_page), :class => 'load-more-posts button', :remote => true if @blogs.next_page %>
+<script type="text/javascript">
+  <% unless @blogs.next_page %>
+  $('a.load-more-posts').remove();
+  <% end %>
+
+  $( ".button-load-more" ).click(function() {
+  // console.log( this.id );
+  $('.button-load-more').hide()
+  $('.loding-blogs').show();
+
+});
+</script>

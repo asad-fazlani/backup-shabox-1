@@ -1,0 +1,17 @@
+<div class="container margin-top85-bottom10">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>title:</strong>
+  <%= @mail_service.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= raw @mail_service.body %>
+</p>
+
+<%= link_to 'Edit', edit_mail_service_path(@mail_service) %> |
+<%= link_to 'Back', mail_services_path %>
+</div>

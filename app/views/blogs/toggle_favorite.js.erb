@@ -1,0 +1,16 @@
+var blogId = '<%= @blog.id%>'
+// get current likes
+//if like increase by 1 when
+// dislike decress by 1
+
+
+
+function toggleLikeButton(blogId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${blogId}']`)
+  likeButton.classList.toggle('change-icon');
+
+}
+toggleLikeButton(blogId);
+var like_count = '<%= @blog.favorited.count %>'
+
+$(`#${blogId}`).text(like_count);

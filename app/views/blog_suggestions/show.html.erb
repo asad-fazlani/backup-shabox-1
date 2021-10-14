@@ -1,0 +1,21 @@
+<div class="container margin-top85-bottom10">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog_suggestion.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @blog_suggestion.status %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @blog_suggestion.description %>
+</p>
+
+<%= link_to 'Edit', edit_blog_suggestion_path(@blog_suggestion) %> |
+<%= link_to 'Back', blog_suggestions_path %>
+</div>

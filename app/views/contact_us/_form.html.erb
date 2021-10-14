@@ -1,0 +1,51 @@
+<div class="container margin-top85-bottom10">
+  <section class="panel panel-default">
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Contact Us</h3> 
+    </div> 
+    <div class="panel-body">
+
+      <div class="container">
+        <!-- <h2>Bootstrap Mixed Form <p class="lead">with horizontal and inline fields</p></h2> -->
+        <%= simple_form_for(@contact_u,html: { class: "form-horizontal"}) do |f| %>
+        <% if @contact_u&.errors&.any? %>
+        <%= render "devise/shared/error_messages", resource: @contact_u %> 
+
+        <% end %>          
+        <!-- <form role="form" class="form-horizontal"> -->
+          <div class="form-group">
+            <label class="col-sm-1" for="inputEmail1">Full name</label>
+            <div class="col-sm-5"><%= f.text_field :name, class: "form-control", placeholder: "Enter Full name" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputEmail1">Email</label>
+            <div class="col-sm-5"><%= f.email_field :email, class: "form-control", placeholder: "Enter email" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputPassword1">Mobile Number</label>
+            <div class="col-sm-5"><%= f.text_field :mobile_number, class: "form-control", placeholder: "Enter Mobile Number", autocomplete: "off" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputPassword1">Subject</label>
+            <div class="col-sm-5"><%= f.text_field :subject, class: "form-control", placeholder: "Enter Subject", autocomplete: "off" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputPassword1">Body</label>
+            <div class="col-sm-5"><%= f.text_area :body, class: "form-control", placeholder: "Enter Body", autocomplete: "off" %></div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-6">
+              <%= f.submit class: 'btn btn-info pull-right' %>
+              <!-- <button type="submit" class="btn btn-info pull-right">Submit</button> -->
+            </div>
+          </div>
+          <% end %>
+          <hr>
+        </div>
+      </div><!-- panel-body // -->
+    </section><!-- panel// -->
+  </div> <!-- container// -->
+
+  <script type="text/javascript">
+    <%= render "contactUsvalidation.js" %>
+  </script>

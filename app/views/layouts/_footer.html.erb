@@ -1,0 +1,59 @@
+<section class="sec_9">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="col-md-3">
+				<h3>About Shadbox</h3>
+				<p class="gray">
+					Only platform where you can monitize your content from 1st day without investment. </p>
+				<p class="fa_fa">
+					<a href="#" class="fa-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="#" class="fa-icons"><i class="fa fa-facebook " aria-hidden="true " ></i></a>
+					<a href="#" class="fa-icons"><i class="fa fa-github" aria-hidden="true"></i></a>
+					<a href="#" class="fa-icons"><i class="fa fa-instagram " aria-hidden="true " ></i></a>
+				</p>
+			</div>
+			<div class="col-md-3 col-xs-12">
+                <h3>Navigation</h3>
+                <ul class="list-unstyled colore">
+                  <li><%= link_to "Blogs", blogs_path %></li>
+                  <li><%= link_to "Quizzes", quizzes_path %></li>
+                  <li><%= link_to "Categories", categories_path %></li>
+                  <li><%= link_to "Contact Us", new_contact_u_path %></li>
+                  <li><%= link_to "About US", about_path %></li>
+                  <li><%= link_to "Privacy Policy", privacy_policy_path %></li>
+                </ul>
+              </div>
+			 <div class="col-md-3 col-xs-12 colore">
+                <h3>Services</h3>
+                <ul class="list-unstyled">
+									<% if current_user.present?  and current_user.admin%>
+	                  <li><%= link_to "Contact Us List", contact_us_path, method: :get %></li>
+	                  <li><%= link_to "Mail Services", mail_services_path, method: :get %></li>
+	                  <li><%= link_to "Add Services", new_service_path, method: :get %></li>
+	                  <li><%= link_to "Add competition", new_competition_path, method: :get %></li>
+                  <%  end %>
+                  <li><%= link_to "All Services", all_services_path, method: :get %></li>
+                 
+                </ul>
+              </div>
+			 <div class="col-md-3 col-xs-12 colore">
+                <h3>Downloads</h3>
+                <ul class="list-unstyled">
+                  <!-- <li><a href="#">Get from the App Store</a></li> -->
+                </ul>
+              </div>
+		</div>
+		</div>
+	</div>
+</section>
+
+<section class="sec_10">
+	<div class="container">
+	<div class="row ">
+          <div class="col-md-4 col-md-offset-4 text-center rights">
+            <p class="copyright rights text-center"><span>&copy; Copyright Shadbox. All Rights Reserved</p>
+         </div>
+         </div>
+         </div>	
+</section>

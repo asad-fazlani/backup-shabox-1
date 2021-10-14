@@ -1,0 +1,24 @@
+<div class="container margin-top85-bottom10">
+<%= simple_form_for(@competition) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%#= f.input :competition_type %>
+     <%= f.select :competition_type, options_for_select(Competition.competition_types.map {|key, value| [key.titleize, Competition.competition_types.key(value)]}) %>
+    <%= f.input :count %>
+    <%= f.input :per_price %>
+    <%= f.input :limits %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.select :status, options_for_select(Competition.statuses.map {|key, value| [key.titleize, Competition.statuses.key(value)]}) %>
+ 
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

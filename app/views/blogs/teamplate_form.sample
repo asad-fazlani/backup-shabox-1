@@ -1,0 +1,19 @@
+<@!-- <section class="sec_4"> -->
+  <div class="container margin-top85-bottom10">
+
+    <section class="panel panel-default">
+      <div class="panel-heading"> 
+        <h3 class="panel-title">Login</h3> 
+      </div> 
+      <div class="panel-body">
+
+        <div class="container">
+        
+        </div><!-- panel-body // -->
+      </section><!-- panel// -->
+    </div> <!-- container// -->
+  <!-- </section> -->
+
+
+
+  heroku run rails sitemap:refresh

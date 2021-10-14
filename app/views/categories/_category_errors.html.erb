@@ -1,0 +1,21 @@
+<!--Errors of category-->
+
+<% if @category.errors.any? %>
+
+<div class="row mt-3 mb-0">
+	<div class="col-md-8 offset-md-2">
+		<div class="alert alert-danger" role="alert">
+            <a href="#" class="close" data-dismiss="alert">&#215;</a>
+			<h5 class="card-title"><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved</h5>
+    		<p class="card-text">
+    			<ul>
+    				<% @category.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+    			</ul>
+    		</p>
+        </div>
+    </div>
+</div>
+
+<% end %>

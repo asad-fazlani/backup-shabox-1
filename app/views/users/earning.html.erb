@@ -1,0 +1,109 @@
+<style type="text/css">
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.container-table {
+	width: 1080px;
+	margin: 20px auto;
+	background-color: #fefefe;
+	color: #222;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 0 6px #666666;
+}
+.container-table > table {
+	border: 2px solid #222;
+	border-radius: 3px;
+}
+.table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+.table th,
+.table .expand {
+	color: #666666;
+	padding: 10px;
+	background-color: #F1C8EF;
+}
+.table th,
+.table td {
+	width: 150px!important;
+}
+.table .expand {
+	cursor: pointer;
+	width: 20px!important;
+}
+.table table {
+	display: none;
+}
+table, th, td {
+	border:1px solid black;
+	padding: 20px;
+}
+
+</style>
+<div class="margin-top85-bottom10">
+<div class="container-table">
+	<h1>Earning Statement</h1>
+	<table class="accordion-table table">
+		<% if @grouped_messages.present?%>
+		<% @grouped_messages.each do |transactions| %>
+		<thead>
+			<tr>
+				<th class="expand"></th>
+				<th> Date</th>
+				<th>Total amunt</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="header-level">
+				<td class="expand">+</td>
+				<td><%= transactions.first %></td>
+				<% debugger %>
+				<td><%= transactions[1]&.pluck(:amount)&.sum rescue 0 %> Rupees</td>
+			</tr>
+			<tr class="sub-level">
+				<td class="expand"></td>
+				<td colspan="6">
+					<table class="table">
+						<thead>
+							<th>Competition Name</th>
+							<th>Earning Amount</th>
+							<th>Blog</th>
+						</thead>
+						<tbody>
+							<% transactions.last.each do |transaction| %>
+							<tr>
+								<td><%= transaction&.competition&.competition_type %></td>
+								<td><%= transaction.amount %></td>
+								<td><%= transaction&.blog&.title %></td>
+
+							</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+		<% end %>
+		<% else %>
+		<h1 class="text-center">No Earning  History Found</h1>
+		<% end %>
+
+	</table>
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.header-level').click(function(){
+			$(this).next('.sub-level').find('table').toggle();
+		});
+	});
+</script>

@@ -1,0 +1,18 @@
+<div class="container margin-top85-bottom10">
+
+  <%= simple_form_for(@mail_service) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :email %>
+    <%= f.input :full_name %>
+    <%= f.cktext_area :body, :ckeditor => {:toolbar => 'pure'}, ckeditor: { language: 'us'} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <% end %>
+</div>

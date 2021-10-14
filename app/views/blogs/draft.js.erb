@@ -1,0 +1,4 @@
+$('.posts').append("<%= escape_javascript(render partial: "blogs/blog_load_more", :locals => { :blogs => @blogs }) %>");
+<% unless @blogs.next_page %>
+  $('a.load-more-posts').remove();
+<% end %>

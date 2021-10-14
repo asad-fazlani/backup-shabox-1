@@ -1,0 +1,53 @@
+<div class="container margin-top85-bottom10">
+<% if @questions.length()<2 %><!--Show alert if there are less than 2 questions-->
+	<div class="alert alert-danger" role="alert">
+		This quiz has less than 2 questions!
+	</div>
+<% end %>
+<%= render 'questions_errors' %><!--Render error messages of questions if any-->
+
+<%= render 'options_errors' %><!--Render error messages of options if any-->
+
+<div class="row mt-4 text-center">
+	<div class="col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-5 offset-1 border border-primary alert alert-primary">
+		<h4>Number of questions</h4>
+		<span class="display-3"><%= @questions.length() %></span>
+	</div>
+	<div class="col-md-5 col-sm-5 col-5 border border-left-0 border-primary alert alert-primary">
+		<h4>Total Score</h4>
+		<span class="display-3"><%= @total_score %></span>
+	</div>
+</div>
+
+<div class="row mr-4 ml-5">
+	<div class="col-md-8 col-sm-6 col-6 pl-4">
+		<% if @quiz.categories.any? %>
+			<%= render @quiz.categories %>
+		<% end %>
+	</div>
+	<div class="col-md-4 col-sm-6 col-6 d-flex flex-row-reverse pr-5">
+		<%= link_to 'Edit Quiz', edit_quiz_path(@quiz), class: "btn btn-info btn-sm" %><span>&nbsp;</span>
+		<%= link_to 'Delete Quiz', quiz_path(@quiz), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>	
+	</div>
+</div>	
+
+<!--Question List -->
+<div class="px-5">
+	<%= render 'question_list' %>
+</div>
+<div class="ml-5">
+	<p>
+	  <a class="btn btn-success" data-toggle="collapse" href="#collapseAddQuestion" role="button" aria-expanded="false" aria-controls="collapseAddQuestion">
+	    Add new question
+	  </a>
+	</p>
+	<div class="collapse mx-5" id="collapseAddQuestion">
+	  <div class="card card-body">
+	    <%= render "questions/form",
+	           :question => @question %>
+	  </div>
+	</div>
+
+	<%= link_to 'New Quiz', new_quiz_path %>
+</div>
+</div>

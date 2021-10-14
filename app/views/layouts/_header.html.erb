@@ -1,0 +1,83 @@
+<nav class="navbar navbar-default softland" style="background-color: white;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <%= link_to 'SHADBOX', root_path, method: 'get',class: "navbar-brand right" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class=" myactive"><%= link_to 'Quizzes', quizzes_path, method: 'get' %></li>
+        <li class=" myactive"><%= link_to "Services", all_services_path, method: :get %></li>
+        <% unless current_user.present? %>
+        <li class=" myactive"  ><%= link_to 'Blogs', blogs_path, method: 'get' %></li>
+        <%  end %>
+        <li class=" myactive"  ><%= link_to 'Categories', categories_path, method: 'get' %></li>
+        <%# if current_user.present?  and current_user.admin%>
+        <li class="myactive">
+          <%= link_to 'Users', users_path, method: 'get' %>
+        </li>
+        <%# end %>
+        
+
+        <% if current_user.present? %>
+        <li class="myactive">
+        </li>
+        <li class="myactive dropdown">
+          <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Blogs
+          </a>
+          <div class="dropdown-menu">
+            <p class="dropdown-item">
+              <%= link_to 'Blogs', blogs_path, method: :get , class: 'text-center menu-color'%>
+            </p>
+            <p class="dropdown-item">
+              <%= link_to 'Add Blog', new_blog_path, method: :get, class: 'text-center menu-color'%>
+            </p>
+            <p class="dropdown-item">
+              <%= link_to "My Blogs", my_blogs_path, method: :get , class: 'text-center menu-color' %>
+            </p>
+          </div>
+        </li>
+         <li class="myactive">
+          <%= link_to current_user.username, user_path(current_user), method: 'get' %>
+        </li>
+
+      <li class="myactive">
+         <%= link_to "Logout", destroy_user_session_path, method: :delete , class: 'text-center menu-color', data: {confirm: 'Are you sure?'} %>
+      </li>
+        <!-- <li class="myactive dropdown">
+          <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <%#= current_user.username %>
+          </a>
+          <div class="dropdown-menu">
+            <p class="dropdown-item">
+              <%#= link_to 'View Profile', user_path(current_user), method: :get , class: 'text-center menu-color'%>
+            </p>
+            <p class="dropdown-item">
+              <%#= link_to 'Edit Account', edit_user_registration_path, method: :get, class: 'text-center menu-color'%>
+            </p>
+            <p class="dropdown-item">
+              <%#= link_to "Logout", destroy_user_session_path, method: :delete , class: 'text-center menu-color', data: {confirm: 'Are you sure?'} %>
+            </p>
+          </div>
+        </li> -->
+
+        <% else %>
+        <li class="myactive"><%= link_to 'Log In', new_user_session_path %></li>
+        <li class="myactive"><%= link_to 'Sign Up', new_user_registration_path%></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+</ul>
+
+</div>
+</div>
+</nav>

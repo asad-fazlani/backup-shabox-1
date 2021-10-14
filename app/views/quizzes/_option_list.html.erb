@@ -1,0 +1,25 @@
+<!--List all options-->
+<% if @option_all.present? %>
+	<div class="row mt-0">
+		<div class="col-md-10 offset-md-1 mt-3">
+			<hr>
+			<h3><%= pluralize(count, "Option") %>:</h3>
+		</div>
+	</div>
+	<div class="row ml-5 pl-5 mt-2">
+		<% @option_all.each do |each_option| %>
+			<% if each_option.question_id == each_question.id %>
+				<% if each_option.is_answer == true %>
+					<% color='btn-success' %>
+				<% else %>
+					<% color='btn-primary' %>
+				<% end %>
+				<div class="col-md-5 my-1 ml-1 text-center border border-light grey-back pt-1">
+						<h3>
+							<%= link_to "#{each_option.opt_name}", option_edit_path(:each_option => each_option), class: "option-btn btn btn-sm #{color}" %>
+						</h3>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>

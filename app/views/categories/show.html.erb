@@ -1,0 +1,19 @@
+<div class="container margin-top85-bottom10">
+<h1 class="mt-3 text-center"><%= @category.name %> Category</h1>
+
+<% if current_user.present? && current_user.admin? %> <!--Show edit option only for admin-->
+	<div class="float-right pr-5 mb-3">
+		<%= link_to 'Edit Category', edit_category_path(@category), class: "btn btn-info btn-sm" %>
+	</div>
+<% end %>
+
+<%= render 'quizzes/quiz', obj: @category_quizzes, type: "Category" %>
+
+
+
+<div class="d-flex mt-3">
+  <div class="mx-auto">
+    <%= will_paginate @category_quizzes, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+</div>
+</div>

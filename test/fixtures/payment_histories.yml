@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  quiz: one
+  payment_id: MyString
+  status: 1
+
+two:
+  user: two
+  quiz: two
+  payment_id: MyString
+  status: 1

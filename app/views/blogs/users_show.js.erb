@@ -1,0 +1,8 @@
+$('.load-more-users').remove()
+var id = ".users<%=@blog.id%>"
+console.log(id)
+$(id).append("<%= escape_javascript(render partial: "blogs/users_show", :locals => { :users => @users, :blog => @blog.id }) %>");
+<% unless @users.next_page %>
+  $('a.load-more-posts').remove();
+  $('.load-more-users').remove();
+<% end %>

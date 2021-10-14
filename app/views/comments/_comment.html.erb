@@ -1,0 +1,28 @@
+     <% if comment.persisted? %>
+     <li class="comment" href="comment-<%= comment.id %>">
+      <% data_id = comment.id %>
+      <a href="#" title="View this user profile" class="photo">
+        <% if comment.user&.profile_picture.present? %>
+        <img src="<%= image_url(comment.user&.profile_picture) %>" class="round-image" alt="">
+      </a>
+      <% else %>
+      <a href="#" title="View this user profile" class="photo">
+      <img class="round-image" src="/avtar.jpg">
+    </a>
+      <% end %>
+      <div class="meta"><%= comment.user.username%> | <%= time_ago_in_words(comment&.created_at) rescue '' %> ago <button class="btn btn-info pull-right" href=""
+       onclick=$("#<%=data_id%>").show()>Reply</button></div>
+       <div class="body"><%= comment.body %></div>
+       <div id="<%=data_id%>" style="display: none;">
+        <%= form_for [comment, Comment.new] do |f| %>
+        <%= f.text_area :body, placeholder: "Add a Reply",class: "form-control", required: true  %><br/>
+        <%= f.submit "Reply",class: "btn btn-info"  %>
+        <% end %>
+      </div>
+
+
+      <ul>
+        <%= render comment.comments %>
+      </ul>
+      <% end %>
+    </li>

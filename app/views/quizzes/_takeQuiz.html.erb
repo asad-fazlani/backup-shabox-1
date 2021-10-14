@@ -1,0 +1,150 @@
+<div class="container margin-top85-bottom10">
+<div class="row mt-4 text-center ">
+	<% tscore=0 %>
+	<% quest_count=0 %>
+	<% @questions.each do |each_question| %>
+		<% found = false %>
+	  	<% count=0 %>
+	  	
+  		<% if @option_all.present? %>
+  			<% @option_all.each do |each_option| %>
+				<% if each_option.question_id == each_question.id %>
+					<% count +=1 %>
+					<% if each_option.is_answer == true %>
+						<% found = true %>
+				  	<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+		<% if found==true && count>=2 %>
+			<% quest_count+=1 %>
+			<% tscore+=each_question.score %>
+		<% end %>
+	<% end %>
+	<div class="col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-5 offset-1 border border-primary alert alert-primary">
+		<h4>Number of questions</h4>
+		<span class="display-3"><%= quest_count %></span>
+	</div>
+
+	<div class="col-md-5 col-sm-5 col-5 border border-left-0 border-primary alert alert-primary">
+		<h4>Total Score</h4>
+		<span class="display-3"><%= tscore %></span>
+	</div>
+</div>
+
+<div class="mr-4 ml-5">
+	<% if @quiz.categories.any? %>
+		<%= render @quiz.categories %>
+	<% end %>
+</div>
+<br>
+
+
+<%= form_for @submission, :url => submissions_path, :method => :post do |f| %><!--Outer form of the nested forms for submission-->
+
+	<!-- <h3 class="text-center mt-4">Questions:</h3> -->
+		<%#= f.submit "Finish Quiz", class: "btn btn-success float-right" %> <br>
+
+	<div class="mt-3">
+		<% i=1 %><!--Used to specify the question number-->
+		<div class="accordion" id="accordionExample">
+			<div class="text-center">
+				<% @questions.each do |each_question| %><!--For checking is question is valid i.e, more than 1 option and has answer-->
+						<% found = false %>
+					  	<% count=0 %>
+				  		<% if @option_all.present? %>
+				  			<% @option_all.each do |each_option| %>
+									<% if each_option.question_id == each_question.id %>
+									<% count +=1 %>
+									<% if each_option.is_answer == true %>
+										<% found = true %>
+								  	<% end %>
+								<% end %>
+							<% end %>
+						<% end %>
+						<% if found==true && count>=2 %><!--Display button for valid questions only-->
+								<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapse<%="#{i}"%>" aria-expanded="true" aria-controls="collapse<%="#{i}"%>"><%= i %></button>
+							<% i+=1 %>
+						<% end %>
+
+				<% end %>
+			</div>
+			<% j=1 %><!--Used to specify the question number-->
+			<% @questions.each do |each_question| %>
+				<% if j==1 %><!--Add show class to the first question only i.e, only first question is displayed when page is loaded-->
+					<% show="show" %>
+				<% else %>
+					<% show="" %>
+				<% end %>
+				<% found = false %><!--For checking is question is valid i.e, more than 1 option and has answer-->
+			  	<% count=0 %>
+		  		<% if @option_all.present? %>
+		  			<% @option_all.each do |each_option| %><!--Check for validity of question-->
+						<% if each_option.question_id == each_question.id %>
+							<% count +=1 %>
+							<% if each_option.is_answer == true %>
+								<% found = true %>
+						  	<% end %>
+						<% end %>
+					<% end %>
+				<% end %>
+				<% if found==true && count>=2 %><!--Display only valid questions-->
+						<div id="collapse<%="#{j}"%>" class="collapse <%="#{show}"%> border mt-3 py-1 alert-primary" aria-labelledby="heading<%="#{j}"%>" data-parent="#accordionExample">
+							<%= f.fields_for :quest_submissions do |q| %><!--Inner form for quest_submissions-->
+								<div class="text-center mb-3"><!--Question name-->
+									<!-- (<%#= j %>) --><h2 class="font-weight-normal mt-2"><%= raw each_question.questions %> 
+										<br>
+											<small> Score: <%= each_question.score %></small>
+									</h2>
+								</div>
+								<div class="row">
+									<!-- <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-8 offset-1">
+										<h4>Score:
+											<small><%#= each_question.score %></small>
+										</h4>
+										<h4 class="mt-3">Options:</h4>
+									</div> -->
+									<div class="col-md-10 offset-md-10 col-sm-10 offset-sm-10 col-xs-10 offset-xs-10 col-10 offset-10" style="margin-left: 20px;">
+										<div class="row" style="border: 5px solid black;">
+											<!--@option_all contains all options of the quiz-->
+											<% @option_all.each do |each_option| %>
+												<% if each_option.question_id == each_question.id %><!--Display options of this question-->
+													<div class="col-md-12 my-1 ml-1 text-center border border-primary" style="background-color: lightblue; ">
+														<h3>
+															<span><!--Select option as radio button-->
+																<%= q.radio_button :option, each_option.opt_name %>
+																<%= q.label :option, rawoption(each_option.opt_name) , :value =>each_option.opt_name  %>
+															</span>
+														</h3>
+													</div>
+												<% end %>
+											<% end %>
+										</div>
+									</div>
+								</div>
+								<%= q.hidden_field :question_id, value: each_question.id %><!--Submit question id also through the inner form-->
+							<% end %>
+							<div class="text-center mt-4 mb-3">
+								<%# if j!=1 %>
+									<!-- 	<button class="btn btn-dark btn-sm" type="button" data-toggle="collapse" data-target="#collapse<%#="#{j-1}"%>" aria-expanded="true" aria-controls="collapse<%#="#{j-1}"%>">Prev Question</button>
+									<%# end %>&nbsp; -->
+								<% if j!=i-1 %>
+									<button class="btn btn-dark btn-sm" style="margin-top: 10px" type="button" data-toggle="collapse" data-target="#collapse<%="#{j+1}"%>" aria-expanded="true" aria-controls="collapse<%="#{j+1}"%>">Next Question</button>
+								<% end %>
+							</div>
+						</div>
+						<% j+=1 %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+	<%= f.hidden_field :quiz_id, value: @quiz.id %><!--Submit quiz id also through the form-->
+	<%= f.hidden_field :user_id, value: current_user.id %><!--Submit user id also through the form-->
+	<br>
+	<div class="form-group text-center mt-4">
+		<%= f.submit "Finish Quiz", class: "btn btn-success" %>
+	</div>
+
+<% end %>
+</div>

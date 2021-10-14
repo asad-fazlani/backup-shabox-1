@@ -1,0 +1,483 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *=  require bootstrap
+ *= require simple_discussion
+ *= require select2
+*= require sweetalert
+*= require toastr
+*= require social-share-button
+ *= require_tree .
+*= require_self
+*= require intlTelInput
+
+ */
+ .change-icon{
+  color: red;
+ }
+
+.star-icon {
+	color: yellow;
+}
+
+/*-- //services --*/
+/*-- dss-services-block --*/
+.dss-services-block {
+  background: #f8f9fa;
+}
+
+.dss-services-block h3 {
+  color: #fff;
+}
+
+.w3_head {
+  text-align: center;
+  color: #303030;
+  margin: 0 0 1em;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.agileits_dss-services-block_grids {
+  margin: 0em 0 3em;
+}
+
+.agileits_dss-services-block_grid {
+  padding: 2em;
+  border: 1px solid #999;
+  border-left: 3px solid #999;
+  text-align: left;
+  border-right: none;
+  background: #fff;
+  transition: .5s ease-in;
+  -webkit-transition: .5s ease-in;
+  -moz-transition: .5s ease-in;
+  -o-transition: .5s ease-in;
+  -ms-transition: .5s ease-in;
+}
+
+.agileits_dss-services-block_grid h5 {
+  font-size: 1.5em;
+  color: #000;
+  margin: 0em 0 .5em;
+  transition: .5s ease-in;
+  -webkit-transition: .5s ease-in;
+  -moz-transition: .5s ease-in;
+  -o-transition: .5s ease-in;
+  -ms-transition: .5s ease-in;
+}
+
+.agileits_dss-services-block_grid p {
+  color: #7e7e7e;
+  line-height: 2em;
+  font-size: 16px;
+}
+
+.service_grid_btm_left1 {
+  transition: all 300ms ease-in-out;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.service_grid_btm_left1:before {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #29a19c;
+  border-right: 2px solid #29a19c;
+}
+
+.service_grid_btm_left1:after,
+.service_grid_btm_left1:before {
+  content: '';
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 800ms ease-in-out;
+  border-radius: 8px;
+}
+
+.service_grid_btm_left1:after {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #29a19c;
+  border-left: 2px solid #29a19c;
+}
+
+.service_grid_btm_left1:hover:after,
+.service_grid_btm_left1:hover:before {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+}
+
+.service_grid_btm_left2 h5 {
+  margin: 0em 0 .5em;
+  color: #232527;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -o-transition: .5s all;
+  -moz-transition: .5s all;
+  -ms-transition: .5s all;
+}
+
+.service_grid_btm_left2 p {
+  color: #777;
+  font-size: 17px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.service_grid_btm_left2 {
+  padding: 2em 1em;
+  border: none;
+  background: #fff;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.service_grid_btm_left1:hover {
+  cursor: default;
+}
+
+.service_grid_btm_left img {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.service_grid_btm_left1:hover .service_grid_btm_left2 i {
+  color: #29a19c;
+  border-color: #252525;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -o-transition: .5s all;
+  -moz-transition: .5s all;
+  -ms-transition: .5s all;
+}
+
+.service_grid_btm_left2 span.fa {
+  display: inline-block;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+  .service_grid_btm_left2 h5 {
+    font-size: 22px;
+  }
+}
+
+/*-- //dss-services-block --*/
+.dss-open-block-services h4.mission {
+  color: #232527;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.dss-open-block-services h3.head-title {
+  color: #232527;
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 600;
+  margin-bottom: 55px;
+  text-align: center;
+}
+
+.dss-open-block-services .open-description a {
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.dss-open-block-services .open-description a:hover {
+  color: #fff;
+}
+
+.dss-open-block-services .open-description p {
+  color: #777;
+  font-size: 17px;
+  line-height: 26px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.dss-open-block-services .icon-holder span.fa {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  transition: all 0.3s ease;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 26px;
+}
+
+.dss-open-block-services .card {
+  padding: 40px 25px;
+  position: relative;
+  background: rgba(41, 161, 156, 0.1);
+  border: none;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  border-radius: 8px;
+}
+
+.dss-open-block-services .card:hover {
+  background: #1f242c;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.dss-open-block-services .card:hover h4.mission {
+  color: #fff;
+}
+
+.dss-open-block-services .card:hover .open-description p {
+  color: #ccc;
+}
+
+.dss-open-block-services .card .icon-holder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+}
+
+@media (max-width: 991px) {
+  .dss-open-block-services h3.head-title {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+.dss-contacts-12 .main-images a {
+  display: inline-block;
+}
+
+.dss-contacts-12 .contacts12-main {
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.dss-contacts-12 .contact-head {
+  color: #232527;
+  line-height: 50px;
+  font-size: 45px;
+}
+
+.dss-contacts-12 .contact {
+  text-align: center;
+}
+
+.dss-contacts-12 input.contact-input,
+.dss-contacts-12 textarea {
+  outline: none;
+  border: none;
+  padding: 17px 20px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  background: #eee;
+  color: #777;
+  width: 100%;
+  font-size: 17px;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+
+.dss-contacts-12 textarea {
+  height: 180px;
+  resize: none;
+}
+
+.dss-contacts-12 button.btn {
+  font-size: 17px;
+  line-height: 25px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 50px;
+}
+
+.dss-contacts-12 button.btn:hover {
+  color: #a3f7bf;
+  background: #1f242c;
+}
+
+@media (max-width: 768px) {
+  .dss-contacts-12 textarea {
+    height: 150px;
+  }
+}
+.margin-top85-bottom10{
+margin-top: 85px;
+margin-bottom: 10px;
+}
+
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+
+/* line 370, app/assets/stylesheets/application.scss */
+.loading .boxLoading {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 379, app/assets/stylesheets/application.scss */
+.loading .boxLoading::before {
+  content: '';
+  width: 50px;
+  height: 5px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  border-radius: 50%;
+  -webkit-animation: shadow 0.5s linear infinite;
+          animation: shadow 0.5s linear infinite;
+}
+
+/* line 391, app/assets/stylesheets/application.scss */
+.loading .boxLoading::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background: #B28FCE;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  -webkit-animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@-webkit-keyframes shadow {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+
+
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.message-sent {
+  position: relative;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  margin: 5px 20px;
+  padding: 10px;
+  float: right;
+}
+
+
+.message-received {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+  margin: 5px 20px;
+  padding: 10px;
+  float: left;
+}
+.menu-color{
+  color: grey;
+  /*margin-left: 2px;*/
+}
+
+ img.profile-photo-lg-index{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }

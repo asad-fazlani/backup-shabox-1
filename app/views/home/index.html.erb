@@ -1,0 +1,178 @@
+     <div class="loading">
+     	<div class="boxLoading"></div>
+     </div>
+
+     <section class="sec_1">
+     	<div class="container">
+     		<div class="row">
+     			<div class="col-md-12 text-center">
+     				<div class="left_promote">
+     					<h1>
+     						We are shadbox
+     					</h1>
+     					<p>
+     						A trusted "Learning and Earning" platform.
+     					</p>
+     				</div>
+     			</div>
+     		</div>
+     		<div class="col-md-12 customer-logos1 slide">
+     			<% Blog.includes(:category).where(status: 'publish').last(6).each do |blog| %>
+     			<div class="col-md-4 res slide">
+					<img src="<%= image_url(blog.image) %>" class="img-thumbnail" alt="">
+     				<div class="head3 dsame">
+     					<h4><%= blog.category.name %></h4>
+     					<p><%= truncate(blog.title, :length => 50) %></p>
+     				</div>
+     			</div>
+     			<% end %>
+		</div>
+		</div>
+	</div>
+</section>
+
+<section class="sec_8">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 heading">
+				<h1><!-- We’re hiring. --> <span>Make shadbox your next career step.</span></h1>
+			</div>
+			<div class="col-md-4 second text-center">
+				<div>
+					<button class="btn">
+						<%= link_to 'Sign Up Now', new_user_registration_path %>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="sec_4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="left_promote">
+					<h1>
+						Our services are
+					</h1>
+					<p>
+						platform where you can learn and earn. Also you can earn from your skills	
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 customer-logos1 slide">
+			<% Service.last(3).each do |service| %>
+			<div class="col-md-4 res slide">
+					<img src="<%= image_url(service.image) %>" class="img-thumbnail" alt="">
+				<div class="head3 dsame">
+					<p><%= truncate(service.title, :length => 50) %></p>
+					<div class="text-right">
+						<%= link_to 'Read more ->', service %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+</section>
+<script type="text/javascript">
+	var siteOwlCarousel = function() {
+		$('.testimonial-carousel').owlCarousel({
+			center: true,
+			items: 1,
+			loop: true,
+			margin: 0,
+			autoplay: true,
+			smartSpeed: 1000,
+		});
+	};
+	siteOwlCarousel();
+</script>
+<script>
+	AOS.init();
+</script>
+<script type="text/javascript">
+	
+	// var siteSticky = function() {
+	// 	$(".js-sticky-header").sticky({topSpacing:0});
+	// };
+	// siteSticky();
+	$(document).ready(function(){       
+		var scroll_pos = 0;
+		$(document).scroll(function() { 
+			scroll_pos = $(this).scrollTop();
+			if(scroll_pos > 50) {
+				$(".softland").css('background-color', 'white');
+				$('.right').css('color','#000');
+				$('.myactive a').css('color','#000');
+			} else {
+				$(".softland").css('background-color', 'transparent');
+				$('.right').css('color','#fff');
+				$('.myactive a').css('color','#fff');
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.customer-logos').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 1500,
+			arrows: false,
+			dots: false,
+			pauseOnHover: false,
+			responsive: [{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4
+				}
+			}, {
+				breakpoint: 520,
+				settings: {
+					slidesToShow: 1
+				}
+			}]
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.customer-logos1').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			arrows: false,
+			dots: false,
+			pauseOnHover: false,
+			responsive: [{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4
+				}
+			}, {
+				breakpoint: 520,
+				settings: {
+					slidesToShow: 1
+				}
+			}]
+		});
+	});
+</script>
+
+</html>
+
+
+<script type="text/javascript">
+	window.onload = function () { 
+		setTimeout(function() {
+			$(".loading").hide();
+		}, 600);
+	}
+</script>

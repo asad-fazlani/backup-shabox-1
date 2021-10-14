@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  count: 1
+  per_price: 1
+  limits: 1
+  start_date: 2021-09-01 15:13:27
+  end_date: 2021-09-01 15:13:27
+  status: 1
+
+two:
+  type: 
+  count: 1
+  per_price: 1
+  limits: 1
+  start_date: 2021-09-01 15:13:27
+  end_date: 2021-09-01 15:13:27
+  status: 1

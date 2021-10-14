@@ -1,0 +1,69 @@
+<div class="container">
+	<% if @question_all.present? %>
+		<br>
+		<h5 class="mb-2">Questions in the quiz: <%= @quiz.name %></h5>
+		<div class="d-flex mt-3">
+		  <div class="mx-auto">
+		    <%= will_paginate @question_all, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+		  </div>
+		</div>
+		<div class="list-group mt-1">
+			<% @question_all.each do |each_question| %>
+				<p>
+					<% found = false %><!--Flag for answer presence-->
+				  	<% count=0 %><!--Count of options-->
+			  		<% if @option_all.present? %>
+			  			<% @option_all.each do |each_option| %>
+							<% if each_option.question_id == each_question.id %>
+								<% count +=1 %>
+								<% if each_option.is_answer == true %><!--Check if answer is present-->
+									<% found = true %>
+									<% @answer = each_option.opt_name %><!--Store the answer-->
+							  	<% end %>
+							<% end %>
+						<% end %>
+					<% end %>
+				
+					<h1>	
+				    	 <%= raw each_question.questions %> 
+				    	<!-- dislay error code -->
+				  	</h1>
+				</p>
+
+				<%= form_for(each_question) do |f| %>
+  	<div class="col-12">
+								  <span class="float-right">
+								  	<!-- Edit Question Button -->
+								  	<%= link_to 'Edit Question', question_edit_path(:each_question => each_question), class: "btn btn-info btn-sm" %>
+									<!-- Delete Question Button -->
+								  	<%= link_to 'Delete Question', question_path(each_question), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+								  </span>
+								</div>
+								<br>
+
+<!-- Add Option -->
+  <div>
+    <div>
+      <%= f.simple_fields_for :options do |t| %>
+        <%= render "option_fields", :f => t,:questionid => each_question.id %>
+      <% end %>
+      <div class="row">
+      
+      <div class="col-md-1">
+        <br>
+        <%= link_to_add_association "Add Option", f, :options ,class: "btn btn-primary" %> 
+      </div>
+    	<div class="col-md-1">
+      <%= f.submit class:"btn btn-success" ,style: "margin-top:20px"  %>
+    </div>
+  </div>
+  </div>
+    </div>
+
+<% end %>
+<br>
+				<!-- code remove of Add an otion modal  -->
+			<% end %>
+		</div>
+	<% end %>
+</div>

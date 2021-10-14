@@ -1,0 +1,209 @@
+
+
+<style>
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+
+<!-- <section class="sec_4"> -->
+
+  <!-- services block 2 -->
+  <div class="dss-services-block" id="classes">
+
+    <div class="container ">
+      <% blogs.each_slice(3).each do |blogs| %>
+      <div class="row">
+        <%  blogs.each do |blog| %>
+        <div class="col-md-4 col-sm-4 col-lg-4 item">
+
+
+          <!-- image show start -->
+          <div class="card item-card card-block" style="border-radius: 2%;">
+            <div class="text-left">
+              <% if blog.user.profile_picture.present? %>
+              <img src="<%= image_url(blog.user.profile_picture) %>" class="profile-photo-lg-index" style="padding: 3px;" alt="">
+              <% else %>
+              <img class="profile-photo-lg-index" style="padding: 3px;" src="/avtar.jpg">
+              <% end %>
+              <%= link_to blog.user.username, user_path(blog.user),style: 'font-size:17px;' %>
+            </div>
+            <h5><%#= truncate(blog.title, :length => 50) %></h4>
+
+
+
+              <%= link_to blog, method: 'get' do %>
+              <img class= "img-blog " src="<%= image_url(blog.image) %>" alt="Photo of sunset" loading="lazy" />
+              <h2 class="item-card-title text-primary mt-3 mb-3"><%= truncate(blog.title, :length => 50) %></h2>
+              <% end %>
+
+              <div class="row" style="padding: 15px;">
+                <ul id="stats" class="float-left">
+                  <li>
+                    <% if current_user.present? %>
+                    <h4 class="text-center myBtn" id="<%=blog.id %>"> <%=  blog.favorited.count rescue 0 %></h4>
+                    <h4 class="text-center"><%= link_to toggle_favorite_blog_path(blog), remote: true, method: :post do %>
+                      <%= render 'blogs/like_button', blog: blog %>
+                      <% end %>
+                    </h4>
+                    <% else %>
+                    <h4 class="text-center myBtn" id="<%=blog.id %>"> <%=  blog.favorited.count rescue 0 %></h4>
+                    <h4 class="text-center">
+                      <%= link_to content_tag(:i,nil, class: 'fa fa-heart'), new_user_session_path %>
+                    </h4>
+                    <% end %>
+
+                  </li>
+                  <li>
+                    <h4 class="text-center"><%= Comment.where(commentable_id: blog.id, commentable_type: "Blog").count %></h4>
+                    <h4 class="text-center"><i class="fa fa-comment" aria-hidden="true"></i></h4>
+                  </li>
+                  <li>
+                    <h4 class="text-center"><%=blog.unique_impression_count %></h4>
+                    <h4 class="text-center"><i class="fa fa-eye"  aria-hidden="true"></i></h4>
+                  </li>
+                </ul>
+                <% if (current_user.present?  and current_user.admin) or (current_user.present? and current_user.id == blog.user_id) %>
+                <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-success', method: :get %>
+                <% if blog.status == 'publish' %>
+                <%= link_to "Un-Publish", update_blog_status_blog_path(id: blog.id, status: 'Draft'), method: :post , class: 'btn btn-primary'%>
+                <% else %>
+                <%= link_to "Publish", update_blog_status_blog_path(id: blog.id, status: 'publish'), method: :post , class: 'btn btn-primary'%>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trigger/Open The Modal -->
+
+          <div id="myModal<%=blog.id %>" class="modal">
+            <div class="modal-content users<%=blog.id%>">
+              <span class="close<%=blog.id%> close">&times;</span>
+              <% @users = User.where(id: blog.favorited.pluck(:favoritor_id)).paginate(page: params[:user_page], per_page: 4) %>
+                <% if @users.present? %>
+                  <%= render :partial => 'blogs/users_show', :locals => { :users => @users, :@blog => blog }%>
+                  <script type="text/javascript">
+                    <% unless @users.next_page %>
+                    $('a.load-more-posts').remove();
+                    <% end %>
+
+                    $( ".button-load-more" ).click(function() {
+                      // $('.load-more-users').hide()
+                      $('.loding-blogs').show();
+
+                    });
+                  </script>
+                <% else %>
+                  <h5>No Users Found</h5>
+                <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+      $( ".button-load-more" ).click(function() {
+        console.log( this.id );
+        $('.button-load-more').hide();
+        $('.loding-blogs').show();
+      });
+    </script>
+    <div class="text-center">
+      <div class="loaders-container loding-blogs">
+        <div class="container">
+          <div class="box"></div>
+        </div>  
+      </div>
+    </div>
+    <div class="text-center button-load-more" style="padding: 5px;">
+     <% if params[:action] == 'my_blogs' %>
+     <%= link_to 'Load More Posts', my_blogs_path(page: @blogs.next_page), :id => @blogs.next_page,:class => "btn btn-primary button-hide-#{@blogs.next_page}", :remote => true if @blogs.next_page %>
+
+     <% elsif params[:action] == 'index'%>
+     <%= link_to 'Load More Posts', blogs_path(page: @blogs.next_page), :id => @blogs.next_page,:class => "btn btn-primary button-hide-#{@blogs.next_page}", :remote => true if @blogs.next_page %>
+
+       <% elsif params[:action] == 'draft'%>
+     <%= link_to 'Load More Posts', draft_path(page: @blogs.next_page), :id => @blogs.next_page,:class => "btn btn-primary button-hide-#{@blogs.next_page}", :remote => true if @blogs.next_page %>
+
+     <% else %>
+     <%= link_to 'Load More Posts', user_path(user: @user,page: @blogs.next_page), :id => @blogs.next_page,:class => "btn btn-primary button-hide-#{@blogs.next_page}", :remote => true if @blogs.next_page %>
+
+     <% end %>
+   </div>
+   <script type="text/javascript">
+    $('.loding-blogs').hide();
+  </script>
+
+
+  <script>
+    $( ".myBtn" ).click(function() {
+  // alert( "Handler for .click() called." );
+// Get the modal
+var modal = document.getElementById("myModal"+this.id);
+
+// Get the button that opens the modal
+var btn = this;
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close"+this.id)[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+});
+
+// When the user clicks anywhere outside of the modal, close it
+</script>

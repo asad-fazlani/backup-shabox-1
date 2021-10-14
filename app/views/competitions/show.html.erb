@@ -1,0 +1,41 @@
+<div class="container margin-top85-bottom10">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @competition.competition_type %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @competition.count %>
+</p>
+
+<p>
+  <strong>Per price:</strong>
+  <%= @competition.per_price %>
+</p>
+
+<p>
+  <strong>Limits:</strong>
+  <%= @competition.limits %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @competition.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @competition.end_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @competition.status %>
+</p>
+
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>
+</div>

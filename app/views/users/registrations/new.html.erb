@@ -1,0 +1,77 @@
+
+
+<div class="container margin-top85-bottom10">
+
+  <section class="panel panel-default">
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Signup</h3> 
+    </div> 
+    <div class="panel-body">
+
+      <div class="container">
+        <!-- <h2>Bootstrap Mixed Form <p class="lead">with horizontal and inline fields</p></h2> -->
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),html: { class: "form-horizontal"}) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %> 
+
+        <!-- <form role="form" class="form-horizontal"> -->
+
+          <div class="form-group">
+            <label class="col-sm-1" for="inputProfilePicture1">Profile Picture</label>
+            <div class="col-sm-5"><%= f.file_field :profile_picture, class: "contact-input",class: "form-control",
+            placeholder: "Profile Picture" %></div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-1" for="inputUsername">username</label>
+            <div class="col-sm-5"><%= f.text_field :username, class: "form-control", placeholder: "Enter Username with lowercase and underscore or ex: shad_box" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputDisplay_Name">Full Name</label>
+            <div class="col-sm-5"><%= f.text_field :display_name, class: "form-control", placeholder: "Enter Full Name " %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputEmail1">Email</label>
+            <div class="col-sm-5"><%= f.email_field :email, class: "form-control", placeholder: "Enter email" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputProfession">profession</label>
+            <div class="col-sm-5"><%= f.text_field :profession, class: "form-control", placeholder: "Enter profession " %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputDescription">Description</label>
+            <div class="col-sm-5"><%= f.text_area :description, class: "form-control", placeholder: "Enter Description" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1" for="inputPassword1">Password</label>
+            <div class="col-sm-5"><%= f.password_field :password, class: "form-control", placeholder: "Enter password", autocomplete: "off" %></div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-1">Password Confirmation</label>
+            <div class="col-sm-5"><%= f.password_field :password_confirmation, class: "form-control", placeholder: "Enter confirm password", autocomplete: "off" %></div>
+          </div>
+          <!-- <div class="form-check">
+            <%#= f.check_box :subscribe %>
+            <label class="form-check-label" for="flexCheckDefault">
+              Subscri
+            </label>
+          </div> -->
+          <div class="form-group">
+            <div class="col-sm-6">
+              <%= f.submit "Sign up", class: 'btn btn-info pull-right' %>
+              <%= render "devise/shared/links" %>
+              <!-- <button type="submit" class="btn btn-info pull-right">Submit</button> -->
+            </div>
+          </div>
+          <% end %>
+          <hr>
+        </div>
+        
+      </div><!-- panel-body // -->
+    </section><!-- panel// -->
+
+
+  </div> <!-- container// -->
+
+  <script type="text/javascript">
+    <%= render "validate.js" %>
+  </script>

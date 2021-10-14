@@ -1,0 +1,91 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<div class="container margin-top85-bottom10">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+        <%= f.text_field :email, class: "form-control", placeholder: "Enter Email" ,required: true, autofocus: true %><br>
+        <%= f.text_field :username, class: "form-control", placeholder: "Enter username " ,required: true, autofocus: true %><br>
+        <%= f.text_field :display_name, class: "form-control", placeholder: "Enter full name" ,required: true, autofocus: true %>
+        <%= render "devise/shared/error_messages", resource: resource %> 
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <br>
+
+          <%= f.text_field :profession,
+        hint: "leave it blank if you don't want to change it",
+        required: false,
+        class: "form-control",
+            placeholder: "Enter profession" %><br>
+
+              <%= f.text_area :description,
+        # hint: "leave it blank if you don't want to change it",
+        required: true,
+        class: "form-control",
+            placeholder: "Enter Description" %><br>
+
+
+        <%= f.file_field :profile_picture, class: "contact-input",class: "form-control",
+        placeholder: "Profile Picture" %><br>
+
+          <%= f.text_field :faceboook_link,
+            required: false,
+            input_html: { autocomplete: "facebook_link" },
+            class: "form-control",
+                placeholder: "Enter facebook link" %><br>
+
+          <%= f.text_field :instagram_link,
+            required: false,
+            input_html: { autocomplete: "instagram_link" },
+            class: "form-control",
+                placeholder: "Enter instagram link" %><br>
+          <%= f.text_field :github_link,
+            required: false,
+            input_html: { autocomplete: "github_link" },
+            class: "form-control",
+                placeholder: "Enter github link" %><br>
+
+                  <%= f.text_field :linkedin_link,
+            required: false,
+            input_html: { autocomplete: "linkedin_link" },
+            class: "form-control",
+                placeholder: "Enter linkedin link" %><br>
+
+        <%= f.text_field :password,
+        hint: "leave it blank if you don't want to change it",
+        required: false,
+        input_html: { autocomplete: "new-password" },
+        class: "form-control",
+            placeholder: "Enter New Password" %><br>
+        <%= f.text_field :password_confirmation,
+            required: false,
+            input_html: { autocomplete: "new-password" },
+            class: "form-control",
+                placeholder: "Enter New Password" %><br>
+         <%= f.text_field :current_password,
+                hint: "we need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" },
+                class: "form-control",
+                    placeholder: "Enter current Password" %><br>
+                </div>
+
+                <div class="form-actions">
+                    <%= f.button :submit, "Update",class: "btn  btn-primary" %>
+                </div>
+                <% end %>
+
+                <h3>Cancel my account</h3>
+
+                <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" } ,method: :delete %></p>
+                <%= link_to "verify Mobile Number" , verify_mobile_path(@user) %>
+
+                <%= link_to "Back", :back %>
+            </div>
+<script type="text/javascript">
+    <%= render "user_edit_validation.js" %>
+</script>
+

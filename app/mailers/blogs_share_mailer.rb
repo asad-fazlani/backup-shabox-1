@@ -1,0 +1,2 @@
+class BlogsShareMailer < ApplicationMailer
+end

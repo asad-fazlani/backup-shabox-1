@@ -1,0 +1,30 @@
+   <section class="dss-contacts-12 py-5 ">
+    <div class="container py-md-3">
+      <div class="contacts12-main">
+       <div class="title-section">
+        <h3 class="main-title-w3 mb-md-5 mb-4">Create/Update Service</h3>
+      </div>
+      <%= simple_form_for(@service) do |f| %>
+      <div class="main-input"> 
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.text_field :title, class: "contact-input", placeholder:  "Enter Service title" %>
+          <%#= f.input :body, class: "contact-input" %>
+          <%= f.file_field :image,class: "contact-input" %>
+          <%= f.input :category_id, as: :select,
+          collection: Category.all,
+          input_html: { id: 'category_id', class: 'form-control custom-drop-icon' } %>
+          <br>
+          <%= f.cktext_area :body, :ckeditor => {:toolbar => 'pure'}, ckeditor: { language: 'us'} %>
+        </div>
+
+        <div class="text-right" style="margin-top:10px">
+          <%= f.button :submit ,class: "btn btn-primary"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

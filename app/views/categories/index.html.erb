@@ -1,0 +1,66 @@
+<style type="text/css">
+  .a-link {
+    color: rgb(64, 162, 156)  !important;
+
+  }
+ </style>
+
+<!-- <section class="sec_4" style="color: white;margin-top: 110px;"> -->
+<!-- services block 2 -->
+<div class="dss-services-block py-5 margin-top85-bottom10" id="classes">
+<h1 class="mb-4 text-center">Quiz Categories</h1>
+
+  <div class="container py-lg-5 py-md-3">
+    <div class="services-block_grids_bottom">
+      <div class="row">
+        <% if @categories.present? %>
+        <% @categories.each do |category| %>
+        <div class="col-lg-12 col-md-12 col-sm-12 service_grid_btm_left">
+          <%= link_to category, method: 'get' do %>
+          <div class="service_grid_btm_left1">
+            <div class="service_grid_btm_left2">
+              <span class="fa fa-desktop text-primary" aria-hidden="true"></span>
+              <h5><%= category.name %></h5>
+              <% quizzes = Quiz.where(id: Question.select("quiz_id").group(:quiz_id).having("count(id)>1")) %> <!--All valid quizzes-->
+              <% category_quiz = category.quizzes %> <!--All quizzes of the category-->
+              <% cnt=0 %>
+              <% category_quiz.each do |quiz| %>
+              <% if quizzes.include?(quiz) %> <!--Count all valid quizzes of the category-->
+              <% cnt+=1 %>
+              <% end %>
+              <% end %>
+              <span class="text-muted"><%= pluralize(cnt, "quiz") %></span>
+            </div>
+
+          </div>
+          <% end %>
+          <% if check_admin %>
+          <%= link_to 'Edit', edit_category_path(category), class: 'a-link', method: :get %>
+          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } , class: 'a-link' %>
+          <% end %>
+        </div>
+        <br/>
+        <% end %>   
+        <% else %>
+        <div class="col-lg-12 col-md-12 service_grid_btm_left">
+          <div class="service_grid_btm_left1">
+            <div class="service_grid_btm_left2">
+              <span class="fa fa-desktop text-primary" aria-hidden="true"></span>
+              <h5>Sorry No Categories Found</h5>
+
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-flex mt-3">
+    <div class="mx-auto">
+      <%= will_paginate @categories, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
+</div>
+<!-- </section> -->
+

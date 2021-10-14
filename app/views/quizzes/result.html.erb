@@ -1,0 +1,37 @@
+
+<div class="container margin-top85-bottom10">
+<div class="card shadow p-3 mb-5 bg-white rounded mt-5" >
+<h1 class="font-weight-bold	text-center ">
+ <%= current_user.username%>
+</h1>
+
+
+
+<div class="text-center">
+	<div class="row">
+<% Quiz.all.each do |q| %>
+<% if  Submission.last.user_id == current_user.id %>
+<% if Submission.last.quiz_id == q.id %>
+
+		<div class="col-md-12">
+				<h2 class="d-inline-flex alert alert-secondary p-3" style="font-weight: bold ;color: grey;">
+					Result of Quiz "<%=  q.name %>"
+
+				</h2>
+				<h3 class="d-inline-flex alert alert-primary p-3">
+					Your Score : <%= Submission.last.score %>
+				</h3>
+
+				<h3 class="d-inline-flex alert alert-success p-3">
+					Thank you for participating <br>
+				</h3>
+<% end  %>
+<% end  %>
+<% end %>
+<br>
+<%= link_to 'More Quizzes', quizzes_path, class:"btn btn-success p-2" %>
+		</div>
+	</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+
+<%#= link_to 'Edit', edit_service_path(@service) %> |
+<%#= link_to 'Back', services_path %>
+
+<div class="container margin-top85-bottom10">
+  <div class="row">
+    <h1 class="align-center"><%= @service.title %></h1><br/>
+    <div class="col-md-4">
+      <img src="<%= image_url(@service.image) %>" class="img-thumbnail" alt="">
+    </div>
+    <div class="col-md-8">
+    <h4><%= raw @service.body%></h4>
+    </div>
+  </div>
+</div>

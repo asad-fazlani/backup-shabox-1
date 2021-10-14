@@ -1,0 +1,11 @@
+<div class="row mt-2">
+	<div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-10 offset-10">
+		<% flash.each do |name, msg| %>
+			<!--name indicates if error message or success message-->
+			<div class='alert alert-<%="#{name}"%>'>
+				<a href="#" class="close" data-dismiss="alert">&#215;</a>
+				<%= content_tag :div, msg, :id => "flash_{name}" if msg.is_a?(String) %>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<%= render 'layouts/data_table' %>
+<div class="container margin-top85-bottom10">
+  
+<p id="notice"><%= notice %></p>
+
+<h1>Contact Us</h1>
+
+<table id="table_id" class="table table-striped table-bordered dt-responsive nowrap">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Body</th>
+      <th>Mobile number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contact_us.each do |contact_u| %>
+      <tr>
+        <td><%= contact_u.email %></td>
+        <td><%= contact_u.name %></td>
+        <td><%= contact_u.subject %></td>
+        <td><%= contact_u.body %></td>
+        <td><%= contact_u.mobile_number %></td>
+        <td><%= link_to 'Show', contact_u %></td>
+        <td><%= link_to 'Edit', edit_contact_u_path(contact_u) %></td>
+        <td><%= link_to 'Destroy', contact_u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact U', new_contact_u_path %>
+
+</div>

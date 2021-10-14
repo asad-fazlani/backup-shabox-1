@@ -1,0 +1,16 @@
+<%= render "layouts/blog_css" %>
+<div class="posts margin-top85-bottom10">
+    <%= render :partial => 'blogs/blog_load_more', :locals => { :blogs => @blogs }%>
+</div>
+<script type="text/javascript">
+    <% unless @blogs.next_page %>
+    $('a.load-more-posts').remove();
+    <% end %>
+
+    $( ".button-load-more" ).click(function() {
+  // console.log( this.id );
+  $('.button-load-more').hide()
+  $('.loding-blogs').show();
+
+});
+</script>

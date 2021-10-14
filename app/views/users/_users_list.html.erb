@@ -1,0 +1,71 @@
+<style type="text/css">
+
+.list-wrapper {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.list {
+  background: #fff;
+  border-radius: 2px;
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.list-item {
+  display: flex;
+  margin: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.list-item:last-child {
+  border-bottom: none;
+}
+.list-item-image {
+  border-radius: 50%;
+  width: 64px;
+}
+.list-item-content {
+  margin-left: 20px;
+}
+.list-item-content h4, .list-item-content p {
+  margin: 0;
+}
+.list-item-content h4 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.list-item-content p {
+  margin-top: 5px;
+  color: #aaa;
+}
+</style>
+<div class="container margin-top85-bottom10">
+  
+<div class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
+  <ul class="list">
+    <% @users.each do |user| %>
+    <li class="list-item">
+      <div>
+        <% if user&.profile_picture.present? %>
+              <img src="<%= image_url(user&.profile_picture) %>" class="list-item-image" alt="">
+              <% else %>
+              <img class="list-item-image" alt="" src="/avtar.jpg">
+              <% end %>
+      </div>
+      <div class="list-item-content">
+        <h4><%= user.display_name %></h4>
+        <p><%= user.username %></p>
+      </div>
+    </li>
+    <% end %>
+    <% unless @users.present? %>
+    <li class="list-item bold">
+      <h1>No Users Present</h1>
+    </li>
+    <%end%>
+    
+  </ul>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag 'service_card', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+<div class="align-center margin-top85-bottom10 ">
+	<%  @services.each do |service| %>
+	<div class="flip flip-vertical">
+		<div class="front" style="background-image: url(<%= image_url(service.image) %>)">
+			<!-- <h1 class="text-shadow">SWAMP</hi> -->
+			</div>
+			<%= link_to service, method: 'get', style:"color:white"  do%>
+			<div class="back">
+				<h2><%= truncate(service.title, :length => 50) %></h2>
+				<div class="row" style="padding: 10px;">
+					<% if check_admin %>
+					<%= link_to 'Edit', edit_service_path(service), class: 'btn btn-success', method: :get %>
+					<%= link_to 'View', service, class: 'btn btn-primary', method: 'get' %>
+					<%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger' %>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
+
+		</div>
+		<%  end %>
+		<div class="d-flex mt-3">
+			<div class="mx-auto">
+				<%= will_paginate @services, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+			</div>
+		</div>
+	</div>

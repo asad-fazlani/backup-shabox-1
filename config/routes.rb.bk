@@ -1,0 +1,55 @@
+Rails.application.routes.draw do
+
+
+  devise_for :users
+  get 'about' => 'pages#about'
+
+  get 'faq' => 'pages#faq'
+
+  get 'login', to: 'sessions#new'
+
+  post 'login', to: 'sessions#create'
+
+  delete 'logout', to: 'sessions#destroy'
+  
+  resources:quizzes
+
+  resources:questions
+
+  resources:options
+
+  resources:categories
+
+  resources:submissions
+
+  get 'signup', to: 'users#new'
+
+  resources:users, except:[:new]
+    post '/purchase' => 'quizzes#update_payment'
+
+  get 'quizz/update_payment' => 'quizzes#update_payment' 
+  get 'question/edit' => 'quizzes#editQuestion'
+
+  get 'option/edit' => 'quizzes#editOption'
+
+  get 'editPassword' => 'users#editPassword'
+
+  post 'editPassword' => 'users#updatePassword'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'categories#index'
+  mount SimpleDiscussion::Engine => "/forum"
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :blogs
+  get 'tags/:tag', to: 'blogs#index', as: :tag
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   resources :blogs do
+    resources :comments
+  end
+
+  resources :blogs, only: :index do
+    member do
+      post 'toggle_favorite', to: "blogs#toggle_favorite"
+    end
+  end
+end

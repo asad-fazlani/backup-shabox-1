@@ -1,0 +1,22 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on 'turbolinks:load', ->
+  $('a.load-more-posts').on 'inview', (e, visible) ->
+    return unless visible
+
+    $.getScript $(this).attr('href')
+
+
+(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('a.load-more-posts').on('inview', function(e, visible) {
+      if (!visible) {
+        return;
+      }
+      return $.getScript($(this).attr('href'));
+    });
+  });
+
+}).call(this);

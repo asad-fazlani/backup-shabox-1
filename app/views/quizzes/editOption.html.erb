@@ -1,0 +1,30 @@
+<!--Form for editing option-->
+<h1 class="mt-3 mb-5 text-center">Edit Option: <%= @each_option.opt_name %></h1>
+
+<%= render 'options_errors' %>
+
+<div class="row mt-3">
+	<div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-8 offset-2">
+		<%= form_for @each_option, :url => option_path(@each_option), :method => :put do |f| %><!--Submits to update action of the option controller-->
+		    <div class="form-group">
+	        	<%= f.label :option %><br/>
+				<%= f.text_field :opt_name, class: "form-control" %>
+			</div>
+			<div class="form-group form-check">
+				<%= f.check_box :is_answer, class:"form-check-input" %>
+				<label class="form-check-label">Set Answer</label>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-6 col-xs-6">
+		  			<%= f.submit class: "btn btn-primary" %>
+		  		</div>
+		  		<div class="col-md-6 col-sm-6 col-6 col-xs-6">
+		  			<%= link_to 'Delete', option_path(@each_option), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+		  		</div>
+		  	</div>
+		<% end %>
+	</div>
+	<div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-8 offset-2 pl-3 mt-3">
+		[ <%= link_to 'Cancel request and return to quiz', {:controller => 'quizzes', :action => 'show', :id => @each_question.quiz_id} %> ]
+	</div>
+</div>

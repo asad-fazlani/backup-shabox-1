@@ -1,0 +1,5 @@
+<% if current_user.present? %>
+<div class="like-icon mx-2 <%= 'change-icon' if current_user.favorited?(blog) %>" data-id="<%= blog.id %>">
+	<i class="fa fa-heart" aria-hidden="true"></i>
+</div>
+<% end %>

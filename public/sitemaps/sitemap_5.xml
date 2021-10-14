@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.shadbox.com/</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/quizzes</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/users/sign_in</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/users/sign_up</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/contact_us/new</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/about</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/privacy_policy</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/ruby-on-rails-help-to-kill-n-1-queries-and-unused-eager-loading</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/little-known-ways-to-python-function-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/star-rating-like-amazon-google-in-ruby-on-rails-web-application</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/100-plus-free-udemy-courses-for-developer-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/how-to-set-up-a-ruby-on-rails-graphql-api</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/useful-command-for-heroku</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=2</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=3</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=4</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=5</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=6</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/ruby-on-rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/python</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/c</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/basic-programming</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/java</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/html-css</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories?page=2</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/users/password/new</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/users/confirmation/new</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=ruby+on+rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=eager+loading</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=n%2B1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=optimized+rails+application</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=python</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=functions</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=rails+07</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=star-rating</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=free+udemy+courses</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=udemy</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=graphql</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=api</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=restapis</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=heroku</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=heroku-cli</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-function-with-example-by-shadbox-com-13405c74-c3b0-4325-9581-7b4a8fce5b12</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-function-with-example-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/dynamic-drag-and-drop-functionality-in-ruby-on-rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/how-to-generate-or-create-rails-app-with-skip-webpacker-or-how-to-disable-webpacker-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/ruby-on-rails-built-in-methods</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/business-idea</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?page=1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-while-loop-for-beginner-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/add-debugger-in-docker-compose-docker-in-ruby-on-rails-application</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/syntax-and-example-of-python-for-loop-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-if-else-statement-with-example-and-syntax-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/how-to-write-clean-code-how-to-code-like-a-pro-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/rails-command-line-cheat-sheet-for-beginner-create-the-new-rails-application-without-production</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/customized-heroku-provided-domain-name-into-custom-domain-name-add-go-daddy-domain-on-heroku</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/deploy-ruby-on-rails-application-free-on-heroku-host-ruby-on-rails-application-free</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/5-paid-udemy-courses-in-free-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-data-type-with-example-and-explanation-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/freshers-jobs-updates-for-software-engineers-software-developers-it-freshers-by-shadbox-com</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/real-time-face-detection-using-opencv-python-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/latest-ruby-on-rails-interview-question-2021-what-are-the-ruby-on-rails-interview-question-all-ruby-on-rails-interview-question-senior-ruby-on-rails-interview-question-junior-ruby-on-rails-interview-question-shadbox-ruby-on-rails-interview-question-and-answer</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/rails-command-line-cheat-sheet-some-useful-command-for-rails-migrations-how-to-reverse-migration-to-specific-steps-how-to-cancel-migration</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/rails-command-line-cheat-sheet-some-useful-command-for-testing-and-console-shadbox-blog</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/python-variables-for-beginner-by-shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/model-scopes-in-ruby-on-rails-add-custom-query-using-scopes-in-ruby-on-rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs/how-to-add-cloudinary-with-ckeditor-in-ruby-on-rails-how-can-we-configure-cloudinary-with-ruby-on-rails-in-heroku-how-can-we-host-image-free-in-ruby-on-rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/react-js</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/angularjs</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/software-testing</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories/jquery-and-ajax</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/categories?page=1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/ruby%20on%20rails?page=2</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/ruby%20on%20rails?page=3</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/python?page=2</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=basicprogramming</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=draganddrop</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=shadbox</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=webpacker</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=ShadBox+Hiring</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=coding</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=while+loop</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=debugger</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=docker-compose</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=logicbuilding</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=web+development</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=clean+code</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=procoder</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=interview+questions+rails</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=ror</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=production</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=godaddy</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=domain</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=cname</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=ruby</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=hosting</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=deployment</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=datatype</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=freshers+jobs</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=New+jobs+2021</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=face+detection</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=software+engineering</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=migration</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=rails+migration</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=rollback</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/blogs?tag=delete+migration</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/ruby%20on%20rails?page=1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/python?page=1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/shadbox?page=2</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://www.shadbox.com/tags/shadbox?page=1</loc>
+  <lastmod>2021-08-09T18:28:38+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
+
+
+</urlset>
